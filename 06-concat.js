@@ -1,8 +1,10 @@
-'use strict';
-
-var concat = require('concat-stream');
-
-process.stdin.pipe(concat(function (text)
+;(function (concat)
 {
-  process.stdout.write(text.toString().split('').reverse().join(''));
-}));
+  'use strict';
+
+  process.stdin.pipe(concat(function (text)
+  {
+    process.stdout.write(text.toString().split('').reverse().join(''));
+  }));
+
+}(require('concat-stream')));
